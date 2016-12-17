@@ -23,7 +23,7 @@
       </header>
 
         <form action = '/' method = 'GET' id=form>
-            <input type = 'text' name = 'string' value = '영어 단어를 입력하세요'/><br><br><br>
+            <input type = 'text' name = 'string' placeholder = '검색어를 입력하세요'/><br><br><br>
             <input type = 'submit' value = 'CHECK'/>
         </form>
         <div id="answer">
@@ -31,8 +31,8 @@
           <h2>{{ string }} 은 {{ score }} 점입니다.</h2>
           {% endif %}
 
-          {% if score == '100' %}
-          <h2>축하합니다! 100점짜리 인생입니다!</h2>
+          {% if msg != '' %}
+          <h2>{{ msg }}</h2>
           {% endif %}
         </div>
 

@@ -14,16 +14,41 @@ def scoring(string):
 
 			score = score + ord(char) - 64
 
-	return str(score)
+
+	if score == 100:
+
+		msg = '꺄오~ 축하합니다! 100점짜리 인생이네요!'
+
+	elif score < 60:
+
+		msg = '시무룩한 점수네요.'
+
+	elif 60 <= score < 90:
+
+		msg = '그럴싸한 점수네요.'
+
+	elif 90 <= score < 100:
+
+		msg = '앗! 뭔가가 더 필요합니다!'
+
+	elif 100 < score:
+
+		msg = '와우! 가치가 폭발했네요!'
+
+	else:
+
+		msg = ''
+
+	return str(score), msg
 
 @app.route('/', methods = ['GET'])
 def index():
 
 	if request.method == 'GET':
 
-		string = request.args.get('string', '')
+		string, msg = request.args.get('string', '')
 
-	return render_template('index.html', string = string, score = scoring(string))
+	return render_template('index.html', string = string, msg = msg, score = scoring(string))
 
 if __name__ == '__main__':
     
