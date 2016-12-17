@@ -7,11 +7,12 @@
   font-style: normal;
 }
 
-
 body {
-  background-image: url("background.jpg");
+  background-image: url("background2.jpg");
+  background-repeat: no-repeat repeat-y;
+  background-size: cover;
+  overflow: hidden;
 }
-
 
 #mainwrapper{
   width: 80%;
@@ -71,4 +72,25 @@ input[type="submit"]{
   opacity: 0.9;
   margin: 0 auto;
   text-align: center;
+}
+
+#spacefill{
+  margin: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width:800px) {
+header h1{
+  font-size: 30px;
+  padding-top: 150px;
+}
+
+input[type="text"]{
+  width: 88%;
+  font-size: 20px;
+}
+
+#answer{
+  font-size: 12px;
+}
 }
