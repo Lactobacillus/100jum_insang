@@ -58,11 +58,6 @@ def index():
 
 	return render_template('index.html', string = string, score = score, msg = msg)
 
-@app.route('/showtraffic', methods = ['GET'])
-def showTraffic():
-
-	return str(count)
-
 if __name__ == '__main__':
     
 	port = int(os.environ.get('PORT', 5000))
