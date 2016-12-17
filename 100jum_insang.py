@@ -19,7 +19,7 @@ def scoring(string):
 
 		msg = '꺄오~ 축하합니다! 100점짜리 인생이네요!'
 
-	elif score < 60:
+	elif 0 < score < 60:
 
 		msg = '시무룩한 점수네요.'
 
