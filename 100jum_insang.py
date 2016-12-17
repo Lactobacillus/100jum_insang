@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, render_template, redirect
 
-count = 0
 app = Flask(__name__)
 
 def scoring(string):
@@ -52,15 +51,14 @@ def index():
 
 		string = request.args.get('string', '')
 		score, msg = scoring(string)
-		count = count + 1
-
+	
 		if 'HEROESOFTHESTORM' in string.upper().replace(' ', ''):
 
 			return redirect('http://kr.battle.net/heroes/ko/', code = 302)
 
 	return render_template('index.html', string = string, score = score, msg = msg)
 
-@app.route('/showtraffic')
+@app.route('/showtraffic', methods = ['GET'])
 def showTraffic():
 
 	return str(count)
