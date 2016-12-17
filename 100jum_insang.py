@@ -14,7 +14,6 @@ def scoring(string):
 
 			score = score + ord(char) - 64
 
-
 	if score == 100:
 
 		msg = '꺄오~ 축하합니다! 100점짜리 인생이네요!'
@@ -31,9 +30,13 @@ def scoring(string):
 
 		msg = '앗! 뭔가가 더 필요합니다!'
 
-	elif 100 < score:
+	elif 100 < score <= 150:
 
 		msg = '와우! 가치가 폭발했네요!'
+
+	elif 150 < score:
+
+		msg = '노잼이네요. 좀 짧게 쓰세요.'
 
 	else:
 
@@ -48,6 +51,10 @@ def index():
 
 		string = request.args.get('string', '')
 		score, msg = scoring(string)
+
+		if 'HEROESOFTHESTORM' in string.upper().replace(' ', ''):
+
+			return redirect('http://kr.battle.net/heroes/ko/', code = 302)
 
 	return render_template('index.html', string = string, score = score, msg = msg)
 
