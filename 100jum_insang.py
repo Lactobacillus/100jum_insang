@@ -46,9 +46,10 @@ def index():
 
 	if request.method == 'GET':
 
-		string, msg = request.args.get('string', '')
+		string = request.args.get('string', '')
+		score, msg = scoring(string)
 
-	return render_template('index.html', string = string, msg = msg, score = scoring(string))
+	return render_template('index.html', string = string, score = score, msg = msg)
 
 if __name__ == '__main__':
     
