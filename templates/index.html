@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>:: 100점 인생 ::</title>
+
+    <style>
+    	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    	{font-family: 'Nanum Gothic', serif};
+        a:link     {color:#000000; text-decoration:none} 
+        a:visited  {color:#000000; text-decoration:none} 
+        a:active   {color:#000000; text-decoration:none} 
+        a:hover    {color:#000000; text-decoration:none} 
+    </style>
+    
+</head>
+<body>
+
+    <div>
+
+        <h1>몇점짜리 인생을 살고 싶은가요?</h1>
+
+        <form action = '/' method = 'GET'>
+            <input type = 'text' name = 'string'/>
+            <input type = 'submit' value = '점수 계산'/>
+        </form>
+
+        {% if string != '' %}
+        <h2>{{ string }} 은 {{ score }} 점 입니다.</h2>
+        {% endif %}
+
+        {% if score == '100' %}
+        <h2>축하합니다! 100점짜리 인생입니다!</h2>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
