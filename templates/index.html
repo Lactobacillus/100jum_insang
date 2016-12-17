@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <title>:: 100점 인생 ::</title>
 
-    <!--><link href = "templates/basic.css" rel="stylesheet" type="text/css"><-->
-    <link href = "{{ url_for('static', filename = 'basic.css') }}" rel="stylesheet" type="text/css">
+    <link href = "{{ url_for('static', filename = 'basic.css') }}" rel = "stylesheet" type = "text/css">
 
     <style>
     	{font-family: 'Nanum Gothic', serif};
@@ -20,11 +19,11 @@
 
     <div id="mainwrapper">
       <header>
-        <h1>몇점짜리 인생을 살고 싶은가요?</h1>
+        <h1>당신의 가치는 몇점인가요?</h1>
       </header>
 
         <form action = '/' method = 'GET' id=form>
-            <input type = 'text' name = 'string'/><br><br><br>
+            <input type = 'text' name = 'string' value = '영어 단어를 입력하세요'/><br><br><br>
             <input type = 'submit' value = 'CHECK'/>
         </form>
         <div id="answer">
@@ -35,6 +34,14 @@
           {% if score == '100' %}
           <h2>축하합니다! 100점짜리 인생입니다!</h2>
           {% endif %}
+
+          {% if 90 <= int(score) < 100 %}
+          <h2>아쉽네요. 조금만 더 노오오력하세요!</h2>
+          {% endif}
+
+          {% if 100 < int(score) %}
+          <h2>가치가 폭발했네요!</h2>
+          {% endif}
         </div>
 
     </div>
