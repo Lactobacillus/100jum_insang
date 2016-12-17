@@ -34,9 +34,9 @@ def scoring(string):
 
 		msg = '와우! 가치가 폭발했네요!'
 
-	elif 150 < score:
+	elif 200 < score:
 
-		msg = '노잼이네요. 좀 짧게 쓰세요.'
+		msg = '좀 짧게 써야할 것 같아요!'
 
 	else:
 
