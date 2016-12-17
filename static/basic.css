@@ -9,7 +9,10 @@
 
 
 body {
-  background-image: url("background.jpg");
+  background-image: url("background2.jpg");
+  background-repeat: no-repeat repeat-y;
+  background-size: cover;
+  overflow: hidden;
 }
 
 
@@ -17,6 +20,9 @@ body {
   width: 80%;
   overflow: auto;
   margin: auto;
+  overflow: hidden;
+
+
 }
 
 
@@ -64,6 +70,7 @@ input[type="submit"]{
   border:none;
   color:#FFFFFF;
   background-color: rgba(255, 0, 0, 0.3);
+  padding: 10px 30px;
 }
 
 #answer{
@@ -71,4 +78,24 @@ input[type="submit"]{
   opacity: 0.9;
   margin: 0 auto;
   text-align: center;
+}
+
+#spacefill{
+  margin: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width:800px) {
+header h1{
+  font-size: 35px;
+  padding-top: 150px;
+}
+
+input[type="text"]{
+  width: 88%;
+}
+
+#answer{
+  font-size: 12px;
+}
 }
